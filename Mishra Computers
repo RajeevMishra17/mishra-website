@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>MishraComputers.org</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: 'Segoe UI';
+    background: #0f172a;
+    color: white;
+}
+
+/* Navbar */
+nav {
+    background: linear-gradient(orange, white, green);
+    padding: 10px;
+    text-align: center;
+    color: black;
+}
+
+/* Hero */
+.hero {
+    text-align: center;
+    padding: 50px;
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+    url('https://images.pexels.com/photos/1181675/pexels-photo-1181675.jpeg');
+    background-size: cover;
+}
+
+/* Courses */
+.courses {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 20px;
+}
+
+.card {
+    background: rgba(255,255,255,0.1);
+    backdrop-filter: blur(10px);
+    margin: 15px;
+    padding: 20px;
+    width: 230px;
+    border-radius: 15px;
+    text-align: center;
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.card img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+/* Form */
+.form-section {
+    text-align: center;
+    padding: 30px;
+    background: #111827;
+}
+
+form input, form select {
+    display: block;
+    margin: 10px auto;
+    padding: 12px;
+    width: 300px;
+    border-radius: 5px;
+    border: none;
+}
+
+/* Button */
+button {
+    background: green;
+    color: white;
+    padding: 12px;
+    border: none;
+    cursor: pointer;
+}
+
+/* Payment */
+#paymentSection {
+    display: none;
+    text-align: center;
+    padding: 40px;
+}
+
+.payment-box {
+    background: white;
+    color: black;
+    width: 320px;
+    margin: auto;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+footer {
+    text-align: center;
+    padding: 15px;
+    background: black;
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+<h2>MishraComputers.org 🇮🇳</h2>
+<p>National Certified Course by Govt of India</p>
+</nav>
+
+<div class="hero">
+<h1>Build Your Future with Professional Computer Courses</h1>
+</div>
+
+<section class="courses">
+
+<div class="card">
+<img src="https://images.pexels.com/photos/546819/pexels-photo-546819.jpeg">
+<h3>Basic Computer</h3>
+<p>₹3000</p>
+</div>
+
+<div class="card">
+<img src="https://images.pexels.com/photos/669615/pexels-photo-669615.jpeg">
+<h3>MS Office Pro</h3>
+<p>₹4000</p>
+</div>
+
+<div class="card">
+<img src="https://images.pexels.com/photos/590016/pexels-photo-590016.jpeg">
+<h3>Advanced Excel</h3>
+<p>₹6000</p>
+</div>
+
+<div class="card">
+<img src="https://images.pexels.com/photos/669365/pexels-photo-669365.jpeg">
+<h3>Tally + GST</h3>
+<p>₹7000</p>
+</div>
+
+<div class="card">
+<img src="https://images.pexels.com/photos/1181263/pexels-photo-1181263.jpeg">
+<h3>SAP FICO</h3>
+<p>₹12000</p>
+</div>
+
+<div class="card">
+<img src="https://images.pexels.com/photos/270404/pexels-photo-270404.jpeg">
+<h3>Web Development</h3>
+<p>₹15000</p>
+</div>
+
+<div class="card">
+<img src="https://images.pexels.com/photos/1181675/pexels-photo-1181675.jpeg">
+<h3>Python Programming</h3>
+<p>₹10000</p>
+</div>
+
+</section>
+
+<section class="form-section" id="formSection">
+<h2>Admission Form</h2>
+
+<form onsubmit="goPayment(event)">
+<input type="text" placeholder="Full Name" required>
+<input type="number" placeholder="Age" required>
+
+<select required>
+<option value="">Select Gender</option>
+<option>Male</option>
+<option>Female</option>
+<option>Transgender</option>
+<option>Prefer not to say</option>
+</select>
+
+<input type="text" placeholder="Locality / Address" required>
+<input type="tel" placeholder="Contact Number" required>
+<input type="email" placeholder="Email ID" required>
+
+<input type="text" placeholder="Qualification" required>
+<input type="text" placeholder="Occupation" required>
+
+<select required>
+<option value="">Select Course</option>
+<option>Basic Computer</option>
+<option>MS Office Pro</option>
+<option>Advanced Excel</option>
+<option>Tally + GST</option>
+<option>SAP FICO</option>
+<option>Web Development</option>
+<option>Python Programming</option>
+</select>
+
+<button type="submit">Submit & Pay ₹11</button>
+</form>
+</section>
+
+<section id="paymentSection">
+<div class="payment-box">
+<h2>Admission Fee</h2>
+<h3>₹11</h3>
+
+<p>UPI ID:</p>
+<b>rajeevgm786-4@okicici</b>
+
+<p>Contact Number:</p>
+<b>+91 8928912748</b>
+
+<br>
+
+<img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=upi://pay?pa=rajeevgm786-4@okicici&pn=MishraComputers&am=11">
+
+<br><br>
+
+<button onclick="done()">I Have Paid</button>
+</div>
+</section>
+
+<footer>
+<p>© 2026 MishraComputers.org</p>
+</footer>
+
+<script>
+function goPayment(e){
+    e.preventDefault();
+    document.getElementById("formSection").style.display = "none";
+    document.getElementById("paymentSection").style.display = "block";
+    window.scrollTo(0,0);
+}
+
+function done(){
+    alert("🎉 Payment Successful! Admission Confirmed.");
+    location.reload();
+}
+</script>
+
+</body>
+</html>
